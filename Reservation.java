@@ -8,11 +8,13 @@ public class Reservation {
 	private Date date;
 	private Date dateEnvoiConfDate;
 	private HashSet<Billet> billets;
+	private Client client;
 	
-	public Reservation(String n, Date d1, Date d2) {
+	public Reservation(String n, Date d1, Date d2, Client c) {
 		this.numero = n;
 		this.date = d1;
 		this.dateEnvoiConfDate = d2;
+		this.client = c;
 		billets = new HashSet<>();
 	}
 
@@ -40,8 +42,16 @@ public class Reservation {
 		this.dateEnvoiConfDate = dateEnvoiConfDate;
 	}
 	
+	public Client getClient() {
+		return client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
+	}
+
 	public String toString() {
-		return "Numero : "+ this.numero + "|    Date : " + this.date + "|     DateConf : " + this.dateEnvoiConfDate;
+		return "Numero : "+ this.numero + "|    Date : " + this.date + "|     DateConf : " + this.dateEnvoiConfDate + " |    Client : " + client.getNom();
 	}
 	
 	public void ajouteBillet(Billet b) {
