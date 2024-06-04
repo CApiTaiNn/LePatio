@@ -1,16 +1,20 @@
 package lot9;
 
+import java.util.ArrayList;
+
 public class Spectacle {
 	private String nom;
 	private int duree;
 	private int nbreMaxSpect;
 	private Genre genre;
+	private ArrayList<Artiste> lesArtistes;
 	
 	public Spectacle(String n, int d, int nbre, Genre g) {
 		this.nom = n;
 		this.duree = d;
 		this.nbreMaxSpect = nbre;
 		this.genre = g;
+		lesArtistes = new ArrayList<>();
 	}
 
 	public String getNom() {
@@ -50,5 +54,21 @@ public class Spectacle {
 		return "Spectacle [nom=" + nom + ", duree=" + duree + ", nbreMaxSpect=" + nbreMaxSpect + "]";
 	}
 	
+	
+	public void ajouterArtiste(Artiste a) {
+		if(a != null && !lesArtistes.contains(a)) {
+			lesArtistes.add(a);
+		}else {
+			System.out.println("impossible d'ajouter cet artiste");
+		}
+	}
+	
+	public void suppArtiste(Artiste a) {
+		if(a != null && lesArtistes.size() > 2) {
+			lesArtistes.remove(a);
+		}else {
+			System.out.println("impossible de supprimé cet artiste");
+		}
+	}
 	
 }

@@ -18,4 +18,6 @@ public abstract class Genre {
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
+	
+	
 }
