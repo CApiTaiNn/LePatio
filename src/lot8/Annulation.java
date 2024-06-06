@@ -5,10 +5,12 @@ import java.util.Date;
 public abstract class Annulation {
 	private Date date;
 	private Boolean remboursementEffectue;
+	private Reservation resa;
 	
-	public Annulation(Date d, Boolean b) {
+	public Annulation(Date d, Boolean b, Reservation r) {
 		this.date = d;
 		this.remboursementEffectue = b;
+		this.resa = r;
 	}
 
 	public Date getDate() {
@@ -26,6 +28,12 @@ public abstract class Annulation {
 	public void setRemboursementEffectue(Boolean remboursementEffectue) {
 		this.remboursementEffectue = remboursementEffectue;
 	}
-	
-	
+
+	public Reservation getResa() {
+		return resa;
+	}
+
+	public void setResa(Reservation resa) {
+		this.resa = resa;
+	}
 }

@@ -8,6 +8,7 @@ public class Spectacle {
 	private int nbreMaxSpect;
 	private Genre genre;
 	private ArrayList<Artiste> lesArtistes;
+	private ArrayList<Representation> lesRepres;
 	
 	public Spectacle(String n, int d, int nbre, Genre g) {
 		this.nom = n;
@@ -15,6 +16,7 @@ public class Spectacle {
 		this.nbreMaxSpect = nbre;
 		this.genre = g;
 		lesArtistes = new ArrayList<>();
+		lesRepres = new ArrayList<>();
 	}
 
 	public String getNom() {
@@ -64,11 +66,26 @@ public class Spectacle {
 	}
 	
 	public void suppArtiste(Artiste a) {
-		if(a != null && lesArtistes.size() > 2) {
+		if(a != null && lesArtistes.size() > 1) {
 			lesArtistes.remove(a);
 		}else {
 			System.out.println("impossible de supprimé cet artiste");
 		}
 	}
-	
+
+	public void ajouterRepre(Representation r) {
+		if(r != null && !lesRepres.contains(r)) {
+			lesRepres.add(r);
+		}else {
+			System.out.println("impossible d'ajouter cet representation");
+		}
+	}
+
+	public void suppRepre(Representation r) {
+		if (r != null && lesRepres.size() > 1) {
+			lesRepres.remove(r);
+		} else {
+			System.out.println("impossible de supprimé cette representation");
+		}
+	}
 }

@@ -74,6 +74,22 @@ public abstract class Client {
 		return "Client [nom=" + nom + ", prenom=" + prenom + ", adresse=" + adresse + ", Tel=" + Tel + ", mail=" + mail
 				+ ", numero=" + numero + "]";
 	}
-	
+
+
+	public void ajouterResa(Reservation r){
+		if(r != null && !mesResa.contains(r)){
+			mesResa.add(r);
+		}else{
+			System.out.println("Impossible d'ajouter cette resa");
+		}
+	}
+
+	public void suppResa(Reservation r){
+		if(r != null & mesResa.contains(r) && mesResa.size() > 1){
+			mesResa.remove(r);
+		}else{
+			System.out.println("Impossible de suprrimer cette resa");
+		}
+	}
 	
 }
