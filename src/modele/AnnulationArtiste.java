@@ -2,19 +2,22 @@ package modele;
 
 import java.util.Date;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.StringProperty;
+
 public class AnnulationArtiste extends Annulation {
-	private String nom;
+	private StringProperty nom;
 	
-	public AnnulationArtiste(Date d, Boolean b,Reservation r, String nom) {
+	public AnnulationArtiste(Date d, BooleanProperty b,Reservation r, StringProperty nom) {
 		super(d, b, r);
 		this.nom = nom;
 	}
 
-	public String getNom() {
+	public StringProperty getNom() {
 		return nom;
 	}
 
-	public void setNom(String nom) {
+	public void setNom(StringProperty nom) {
 		this.nom = nom;
 	}
 

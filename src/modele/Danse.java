@@ -1,7 +1,9 @@
 package modele;
 
+import javafx.beans.property.StringProperty;
+
 public class Danse extends Genre{
-	public Danse(String lib) {
+	public Danse(StringProperty lib) {
 		super(lib);
 	}
 }

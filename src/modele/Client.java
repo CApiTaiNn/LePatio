@@ -2,16 +2,18 @@ package modele;
 
 import java.util.ArrayList;
 
+import javafx.beans.property.StringProperty;
+
 public abstract class Client {
-	private String nom;
-	private String prenom;
-	private String adresse;
-	private String Tel;
-	private String mail;
-	private String numero;
+	private StringProperty nom;
+	private StringProperty prenom;
+	private StringProperty adresse;
+	private StringProperty Tel;
+	private StringProperty mail;
+	private StringProperty numero;
 	private ArrayList<Reservation>mesResa;
 	
-	public Client(String n, String p, String a, String t, String m, String num) {
+	public Client(StringProperty n, StringProperty p, StringProperty a, StringProperty t, StringProperty m, StringProperty num) {
 		this.nom = n;
 		this.prenom = p;
 		this.adresse = a;
@@ -21,51 +23,51 @@ public abstract class Client {
 		mesResa = new ArrayList<>();
 	}
 
-	public String getNom() {
+	public StringProperty getNom() {
 		return nom;
 	}
 
-	public void setNom(String nom) {
+	public void setNom(StringProperty nom) {
 		this.nom = nom;
 	}
 
-	public String getPrenom() {
+	public StringProperty getPrenom() {
 		return prenom;
 	}
 
-	public void setPrenom(String prenom) {
+	public void setPrenom(StringProperty prenom) {
 		this.prenom = prenom;
 	}
 
-	public String getAdresse() {
+	public StringProperty getAdresse() {
 		return adresse;
 	}
 
-	public void setAdresse(String adresse) {
+	public void setAdresse(StringProperty adresse) {
 		this.adresse = adresse;
 	}
 
-	public String getTel() {
+	public StringProperty getTel() {
 		return Tel;
 	}
 
-	public void setTel(String tel) {
+	public void setTel(StringProperty tel) {
 		Tel = tel;
 	}
 
-	public String getMail() {
+	public StringProperty getMail() {
 		return mail;
 	}
 
-	public void setMail(String mail) {
+	public void setMail(StringProperty mail) {
 		this.mail = mail;
 	}
 
-	public String getNumero() {
+	public StringProperty getNumero() {
 		return numero;
 	}
 
-	public void setNumero(String numero) {
+	public void setNumero(StringProperty numero) {
 		this.numero = numero;
 	}
 

@@ -2,20 +2,22 @@ package modele;
 
 import java.util.ArrayList;
 
+import javafx.beans.property.StringProperty;
+
 public class Artiste {
-	private String nom;
+	private StringProperty nom;
 	private ArrayList<Spectacle> spectacles;
 	
-	public Artiste(String n) {
+	public Artiste(StringProperty n) {
 		this.nom = n;
 		spectacles = new ArrayList<>();
 	}
 
-	public String getNom() {
+	public StringProperty getNom() {
 		return nom;
 	}
 
-	public void setNom(String nom) {
+	public void setNom(StringProperty nom) {
 		this.nom = nom;
 	}
 	

@@ -1,17 +1,19 @@
 package modele;
 
+import javafx.beans.property.StringProperty;
+
 public class Zone {
-	private String nom;
+	private StringProperty nom;
 	
-	public Zone(String n) {
+	public Zone(StringProperty n) {
 		this.nom = n;
 	}
 
-	public String getNom() {
+	public StringProperty getNom() {
 		return nom;
 	}
 
-	public void setNom(String nom) {
+	public void setNom(StringProperty nom) {
 		this.nom = nom;
 	}
 	

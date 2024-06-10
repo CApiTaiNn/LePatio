@@ -1,6 +1,6 @@
 package modele;
 
-import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.HashSet;
 
@@ -11,7 +11,7 @@ public class Reservation {
 	private HashSet<Billet> billets;
 	private Client client;
 	private Representation representation;
-	private ArrayList<Annulation> lesAnnulation;
+	private Annulation lesAnnulation;
 	
 	public Reservation(String n, Date d1, Date d2, Client c) {
 		this.numero = n;
@@ -19,7 +19,6 @@ public class Reservation {
 		this.dateEnvoiConfDate = d2;
 		this.client = c;
 		billets = new HashSet<>();
-		lesAnnulation = new ArrayList<>();
 	}
 
 	public String getNumero() {

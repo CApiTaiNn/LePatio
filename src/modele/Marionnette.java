@@ -1,8 +1,9 @@
 package modele;
 
+import javafx.beans.property.StringProperty;
+
 public class Marionnette extends Genre{
-	public Marionnette(String lib) {
-		// TODO Auto-generated constructor stub
+	public Marionnette(StringProperty lib) {
 		super(lib);
 	}
 }

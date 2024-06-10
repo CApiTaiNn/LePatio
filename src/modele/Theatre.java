@@ -1,8 +1,9 @@
 package modele;
 
+import javafx.beans.property.StringProperty;
+
 public class Theatre extends Genre{
-	public Theatre(String lib) {
-		// TODO Auto-generated constructor stub
+	public Theatre(StringProperty lib) {
 		super(lib);
 	}
 }

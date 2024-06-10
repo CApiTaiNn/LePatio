@@ -1,7 +1,9 @@
 package modele;
 
+import javafx.beans.property.StringProperty;
+
 public class Abonne extends Client {
-	public Abonne(String n, String p, String a, String t, String m, String num) {
+	public Abonne(StringProperty n, StringProperty p, StringProperty a, StringProperty t, StringProperty m, StringProperty num) {
 		super(n, p, a, t, m, num);
 	}
 }
