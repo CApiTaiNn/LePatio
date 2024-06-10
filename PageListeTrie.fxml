@@ -5,9 +5,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fentetre.controlleurPatio">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.controlleurPatio">
    <top>
-      <MenuButton alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Liste des réservation annuler en fonction des tries" BorderPane.alignment="CENTER">
+      <MenuButton fx:id="choixTrie" alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Liste des réservation annuler en fonction des tries" BorderPane.alignment="CENTER">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -23,17 +23,17 @@
             <Insets right="20.0" />
          </BorderPane.margin>
          <children>
-            <Button mnemonicParsing="false" text="Ajouter">
+            <Button fx:id="ajouter" mnemonicParsing="false" text="Ajouter">
                <VBox.margin>
                   <Insets bottom="20.0" left="70.0" right="40.0" top="30.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Modifier">
+            <Button fx:id="modifier" mnemonicParsing="false" text="Modifier">
                <VBox.margin>
                   <Insets left="70.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Supprimer">
+            <Button fx:id="Supprimer" mnemonicParsing="false" text="Supprimer">
                <VBox.margin>
                   <Insets left="70.0" top="20.0" />
                </VBox.margin>
@@ -47,7 +47,7 @@
       </VBox>
    </right>
    <center>
-      <TableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="listeResa" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets left="50.0" />
          </BorderPane.margin>
