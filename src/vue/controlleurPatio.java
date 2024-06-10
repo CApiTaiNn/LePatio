@@ -1,4 +1,4 @@
-package controleur;
+package vue;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
