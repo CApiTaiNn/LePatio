@@ -3,15 +3,16 @@ package modele;
 import java.util.Date;
 
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
 
 public abstract class Annulation {
 	private Date date;
 	private BooleanProperty remboursementEffectue;
 	private Reservation resa;
 	
-	public Annulation(Date d, BooleanProperty b, Reservation r) {
+	public Annulation(Date d, Boolean b, Reservation r) {
 		this.date = d;
-		this.remboursementEffectue = b;
+		this.remboursementEffectue = new SimpleBooleanProperty(b);
 		this.resa = r;
 	}
 
@@ -23,8 +24,8 @@ public abstract class Annulation {
 		this.date = date;
 	}
 
-	public BooleanProperty getRemboursementEffectue() {
-		return remboursementEffectue;
+	public Boolean getRemboursementEffectue() {
+		return remboursementEffectue.get();
 	}
 
 	public void setRemboursementEffectue(BooleanProperty remboursementEffectue) {
