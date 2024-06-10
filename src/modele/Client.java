@@ -2,6 +2,7 @@ package modele;
 
 import java.util.ArrayList;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public abstract class Client {
@@ -13,58 +14,58 @@ public abstract class Client {
 	private StringProperty numero;
 	private ArrayList<Reservation>mesResa;
 	
-	public Client(StringProperty n, StringProperty p, StringProperty a, StringProperty t, StringProperty m, StringProperty num) {
-		this.nom = n;
-		this.prenom = p;
-		this.adresse = a;
-		this.Tel = t;
-		this.mail = m;
-		this.numero = num;
+	public Client(String n, String p, String a, String t, String m, String num) {
+		this.nom = new SimpleStringProperty(n);
+		this.prenom = new SimpleStringProperty(p);
+		this.adresse = new SimpleStringProperty(a);
+		this.Tel = new SimpleStringProperty(t);
+		this.mail = new SimpleStringProperty(m);
+		this.numero = new SimpleStringProperty(num);
 		mesResa = new ArrayList<>();
 	}
 
-	public StringProperty getNom() {
-		return nom;
+	public String getNom() {
+		return nom.get();
 	}
 
 	public void setNom(StringProperty nom) {
 		this.nom = nom;
 	}
 
-	public StringProperty getPrenom() {
-		return prenom;
+	public String getPrenom() {
+		return prenom.get();
 	}
 
 	public void setPrenom(StringProperty prenom) {
 		this.prenom = prenom;
 	}
 
-	public StringProperty getAdresse() {
-		return adresse;
+	public String getAdresse() {
+		return adresse.get();
 	}
 
 	public void setAdresse(StringProperty adresse) {
 		this.adresse = adresse;
 	}
 
-	public StringProperty getTel() {
-		return Tel;
+	public String getTel() {
+		return Tel.get();
 	}
 
 	public void setTel(StringProperty tel) {
 		Tel = tel;
 	}
 
-	public StringProperty getMail() {
-		return mail;
+	public String getMail() {
+		return mail.get();
 	}
 
 	public void setMail(StringProperty mail) {
 		this.mail = mail;
 	}
 
-	public StringProperty getNumero() {
-		return numero;
+	public String getNumero() {
+		return numero.get();
 	}
 
 	public void setNumero(StringProperty numero) {

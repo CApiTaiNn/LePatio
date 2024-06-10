@@ -9,7 +9,7 @@ import javafx.fxml.FXMLLoader;
 public class FenCreaZone extends Stage{
 	
 	public FenCreaZone() throws IOException {
-		this.setTitle("Liste des employ�s");
+		this.setTitle("Creer des zones");
 		Scene laScene = new Scene(creerSceneGraph());
 		this.setMinHeight(400);
 		this.setMinWidth(30);
