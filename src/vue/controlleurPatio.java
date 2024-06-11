@@ -1,6 +1,6 @@
 package vue;
 
-import controlleur.MainSae;
+import controleur.MainSae;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
