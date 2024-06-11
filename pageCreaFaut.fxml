@@ -5,7 +5,6 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.controleurCreaFaut">
    <children>
       <Label text="Création d'un fauteuil :">
@@ -47,12 +46,12 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button mnemonicParsing="false" text="Ok">
+            <Button fx:id="ok" mnemonicParsing="false" onMouseClicked="#clicOk" text="Ok">
                <HBox.margin>
                   <Insets right="30.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" text="Annuler" />
+            <Button fx:id="annuler" mnemonicParsing="false" onMouseClicked="#clicAnnuler" text="Annuler" />
          </children>
          <opaqueInsets>
             <Insets right="30.0" />

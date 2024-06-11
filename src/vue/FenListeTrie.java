@@ -9,7 +9,7 @@ import javafx.fxml.FXMLLoader;
 public class FenListeTrie extends Stage{
 	
 	public FenListeTrie() throws IOException {
-		this.setTitle("Liste des annulations");
+		this.setTitle("Liste des employ�s");
 		Scene laScene = new Scene(creerSceneGraph());
 		this.setMinHeight(600);
 		this.setMinWidth(30);

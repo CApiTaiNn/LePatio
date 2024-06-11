@@ -1,4 +1,4 @@
-package controleur;
+package controlleur;
 
 import vue.FenCreaZ;
 import vue.FenCreaZone;
@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 public class MainSae extends Application {
 	static private FenListeTrie fListe;
 	static private FenListeZone fZone;
-	static private FenCreaZone fCreaZone;
+	static private FenCreaZone fCreaFaut;
 	static private FenCreaZ fCreaZ;
 
 
@@ -21,7 +21,7 @@ public class MainSae extends Application {
 		//Donnees.chargementDonnees();
 		fListe = new FenListeTrie();
 		fZone = new FenListeZone();
-		fCreaZone = new FenCreaZone();
+		fCreaFaut = new FenCreaZone();
 		fCreaZ = new FenCreaZ();
 		//fNouvel = new FenNouvelEmploye();
 		//fModifier = new FenModifierEmploye();
@@ -29,13 +29,23 @@ public class MainSae extends Application {
 		//fModifier.initModality(Modality.APPLICATION_MODAL);
 		//fListe.initModality(Modality.APPLICATION_MODAL);
 		//fListe.show();
-		//fCreaZone.show();
-		fCreaZ.show();
+		fCreaFaut.show();
+		//fCreaZ.show();
+		//fZone.show();
 	}
 	public static void main(String args[]) {
 		Application.launch();
 	}
 	static public void fermer() {
-		fListe.close();
+		System.exit(0);
+	}
+	static public void fermerListeZone() {
+		System.exit(0);
+	}
+	static public void fermerCreaFaut() {
+		fCreaFaut.close();
+	}
+	static public void fermerCreaZone() {
+		fCreaZ.close();
 	}
 }

@@ -7,7 +7,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.controlleurPatio">
    <top>
-      <MenuButton fx:id="choixTrie" alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Liste des réservation annuler en fonction des tries" BorderPane.alignment="CENTER">
+      <MenuButton fx:id="choixTrie" alignment="BOTTOM_CENTER" mnemonicParsing="false" onMouseClicked="#listeresa" text="Liste des réservation annuler en fonction des tries" BorderPane.alignment="CENTER">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -23,17 +23,17 @@
             <Insets right="20.0" />
          </BorderPane.margin>
          <children>
-            <Button fx:id="ajouter" mnemonicParsing="false" text="Ajouter">
+            <Button fx:id="ajouter" mnemonicParsing="false" onMouseClicked="#ajouter" text="Ajouter">
                <VBox.margin>
                   <Insets bottom="20.0" left="70.0" right="40.0" top="30.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="modifier" mnemonicParsing="false" text="Modifier">
+            <Button fx:id="modifier" mnemonicParsing="false" onMouseClicked="#modifier" text="Modifier">
                <VBox.margin>
                   <Insets left="70.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Supprimer" mnemonicParsing="false" text="Supprimer">
+            <Button fx:id="Supprimer" mnemonicParsing="false" onMouseClicked="#supprimer" text="Supprimer">
                <VBox.margin>
                   <Insets left="70.0" top="20.0" />
                </VBox.margin>
