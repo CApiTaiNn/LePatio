@@ -1,5 +1,6 @@
 package vue;
 
+import controlleur.MainSae;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
 import javafx.fxml.FXML;
@@ -36,7 +37,26 @@ public class controlleurPatio {
 
     @FXML
     void fermer(MouseEvent event) {
-    	System.exit(0);
+    	MainSae.fermer();
+    }
+    @FXML
+    void ajouter(MouseEvent event) {
+
+    }
+
+    @FXML
+    void modifier(MouseEvent event) {
+
+    }
+
+    @FXML
+    void supprimer(MouseEvent event) {
+
+    }
+
+    @FXML
+    void listeresa(MouseEvent event) {
+
     }
     
     

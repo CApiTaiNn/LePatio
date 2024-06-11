@@ -4,6 +4,7 @@ import vue.FenCreaZ;
 import vue.FenCreaZone;
 import vue.FenListeTrie;
 import vue.FenListeZone;
+import vue.controleurZone;
 import javafx.application.Application;
 //import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -42,6 +43,7 @@ public class MainSae extends Application {
 	
 	
 	static public void ouvrirListeFauteuil(Fauteuil f) {
+		controleurZone.afficherImprime(f);
 		fCreaZone.show();
 	}
 	
