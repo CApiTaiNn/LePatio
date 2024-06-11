@@ -25,14 +25,11 @@ public class MainSae extends Application {
 		fZone = new FenListeZone();
 		fCreaFaut = new FenCreaZone();
 		fCreaZ = new FenCreaZ();
-		//fNouvel = new FenNouvelEmploye();
-		//fModifier = new FenModifierEmploye();
-		//fNouvel.initModality(Modality.APPLICATION_MODAL);
-		//fModifier.initModality(Modality.APPLICATION_MODAL);
 		//fListe.initModality(Modality.APPLICATION_MODAL);
 		//fListe.show();
-		fCreaFaut.show();
+		//fCreaFaut.show();
 		//fCreaZ.show();
+		fZone.show();
 	}
 	public static void main(String args[]) {
 		Application.launch();
@@ -52,6 +49,22 @@ public class MainSae extends Application {
 	
 	static public void fermerCreaZone() {
 		fCreaZ.close();
+	}
+	
+	static public void ouvrirCreaFaut() {
+		fCreaFaut.show();
+	}
+	
+	static public void ouvrirCreaZone() {
+		fCreaZ.show();
+	}
+	
+	
+	static public void ouvrirListeFauteuil(Fauteuil f) {
+		System.out.println("fauteuil creer");
+		controleurZone controleurZone = new controleurZone();
+		controleurZone.afficherImprime(f);
+		fZone.show();
 	}
 	
 }

@@ -1,7 +1,9 @@
 package vue;
 
+import controleur.MainSae;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -40,16 +42,26 @@ public class controleurZone {
     
     @FXML
     public void initialize() {
-        // Initialize the TableView columns
         colonne1.setCellValueFactory(new PropertyValueFactory<>("numero"));
 
-
-        // Set the data to the TableViewé
         listeZone.setItems(data);
     }
+    
 
     public void afficherImprime(Fauteuil f) {
         data.add(f);
+        System.out.println("confirmation de creation");
     }
-
+    
+    
+    @FXML
+    void creerFauteuil(ActionEvent event) {
+    	MainSae.ouvrirCreaFaut();
+    }
+	
+    
+    @FXML
+    void creerZone(ActionEvent event) {
+    	MainSae.ouvrirCreaZone();
+    }
 }

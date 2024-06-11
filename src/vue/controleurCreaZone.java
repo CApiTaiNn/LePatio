@@ -25,15 +25,17 @@ public class controleurCreaZone {
 
     @FXML
     void clicOk(MouseEvent event) {
-
+    	
     }
 
     @FXML
     void clicAnnuler(MouseEvent event) {
     	MainSae.fermerCreaZone();
     }
+    /*
     public void initialize() {
 		ok.disableProperty().bind(nomRangee.textProperty().isEmpty());
 	}
+	*/
 
 }
