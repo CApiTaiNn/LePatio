@@ -24,7 +24,7 @@ public class controlleurPatio {
     private Button fermer;
 
     @FXML
-    private TableView<Annulation> listeResa;
+    private TableView<AnnulationClient> listeResa;
 
     @FXML
     private Button modifier;
@@ -59,22 +59,24 @@ public class controlleurPatio {
 
     }
     
-    
+    @FXML
     void initialize() {
-    	TableColumn<Annulation, String> colonne1 = new TableColumn<Annulation,String>("Nom");
+    	TableColumn<AnnulationClient, String> colonne1 = new TableColumn<AnnulationClient,String>("Nom");
 		colonne1.setCellValueFactory(new PropertyValueFactory<Annulation,String>("nom"));	
 		listeResa.getColumns().set(0, colonne1);
-		/*
-		TableColumn<Annulation, String> colonne2 = new TableColumn<Annulation,String>("Nom");
-		colonne2.setCellValueFactory(new PropertyValueFactory<Annulation, String>("nom"));
-		listeResa.getColumns().set(1, colonne2);
-		TableColumn<Annulation, String> colonne3 = new TableColumn<Annulation,String>("Poste");
-		colonne3.setCellValueFactory(new PropertyValueFactory<Annulation, String>("poste"));
-		listeResa.getColumns().set(2, colonne3);
-		TableColumn<Annulation,Integer> colonne4 = new TableColumn<Annulation,Integer>("D�partement");
-		colonne4.setCellValueFactory(new PropertyValueFactory<Annulation, Integer>("dept"));
-		listeResa.getColumns().set(3, colonne4);
-			*/	
+		
+		TableColumn<AnnulationClient, Boolean> colonne2 = new TableColumn<AnnulationClient,Boolean>("Nom");
+		colonne2.setCellValueFactory(new PropertyValueFactory<AnnulationClient, Boolean>("remboursementEffectue"));
+		listeResa.getColumns().add(colonne2);
+
+		TableColumn<AnnulationClient, Date> colonne3 = new TableColumn<AnnulationClient,Date>("Poste");
+		colonne3.setCellValueFactory(new PropertyValueFactory<AnnulationClient, Date>("date"));
+		listeResa.getColumns().add(colonne3);
+
+		TableColumn<AnnulationClient,Reservation> colonne4 = new TableColumn<AnnulationClient,Reservation>("D�partement");
+		colonne4.setCellValueFactory(new PropertyValueFactory<AnnulationClient, Reservation>("resa"));
+		listeResa.getColumns().add(colonne4);
+			
 		listeResa.setItems(Donnees.getLesAnnulations());
 		listeResa.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 		
