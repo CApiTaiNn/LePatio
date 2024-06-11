@@ -5,14 +5,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import modele.Zone;
 
 public class controleurCreaZone {
 
     @FXML
     private Button annuler;
 
-    @FXML
-    private TextField nomSpectacle;
 
     @FXML
     private TextField nomZone;
@@ -26,9 +25,10 @@ public class controleurCreaZone {
     @FXML
     void creerZone(ActionEvent event) {
     	System.out.println("Zone créer ");
-    	String nomSpec = nomSpectacle.getText();
     	String nomZ = nomZone.getText();
-    	String nomRange = nomRangee.getText();
+        int nomRange = Integer.parseInt(nomRangee.getText());
+    	Zone z = new Zone(nomZ,nomRange);
+    	System.out.println(z.toString());
     }
 
     @FXML
