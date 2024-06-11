@@ -10,12 +10,18 @@ public class Zone {
     private Set<Spectacle> listSpectacles;
     private Map<String, Set<Fauteuil>> rangees;
     private Map<String, Integer> nextNumeroFauteuil;  // Pour garder la trace du prochain numéro de fauteuil pour chaque rangée
+    private int prochainIndiceRangee;
 
-    public Zone(String n) {
+    public Zone(String n, int x) {
         this.nom = n;
         this.listSpectacles = new HashSet<>();
         this.rangees = new HashMap<>();
         this.nextNumeroFauteuil = new HashMap<>();
+        this.prochainIndiceRangee = 0;
+
+        for (int i = 0; i < x; i++) {
+            ajouterRangee();
+        }
     }
 
     public String getNom() {
@@ -46,6 +52,14 @@ public class Zone {
         return rangees.getOrDefault(rangee, new HashSet<>());
     }
 
+    public void ajouterRangee() {
+        char lettreRangee = (char) ('A' + prochainIndiceRangee);
+        String rangee = String.valueOf(lettreRangee);
+        rangees.putIfAbsent(rangee, new HashSet<>());
+        nextNumeroFauteuil.putIfAbsent(rangee, 1);
+        prochainIndiceRangee++;
+    }
+
     public Fauteuil creerFauteuil(String rangee) {
         rangees.putIfAbsent(rangee, new HashSet<>());
         nextNumeroFauteuil.putIfAbsent(rangee, 1);
@@ -74,10 +88,12 @@ public class Zone {
 
             if (fauteuilToRemove != null) {
                 fauteuils.remove(fauteuilToRemove);
-                nextNumeroFauteuil.put(rangee, highestNumber);
+                nextNumeroFauteuil.put(rangee, highestNumber);  // Met à jour le prochain numéro de fauteuil
             }
         }
     }
+    
+    
 
     @Override
     public String toString() {
