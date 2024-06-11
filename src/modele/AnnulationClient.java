@@ -13,13 +13,13 @@ public class AnnulationClient extends Annulation {
 		this.nom = new SimpleStringProperty(n);
 	}
 
-	public StringProperty getNom() {
-		return nom;
+	public String getNom() {
+		return nom.get();
 	}
 
-	public void setNom(StringProperty nom) {
-		this.nom = nom;
-	}
+	public void setNom(String nom) {
+        this.nom.set(nom);
+    }
 	
 	
 }

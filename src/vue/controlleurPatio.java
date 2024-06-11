@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import modele.Annulation;
+import modele.Donnees;
 import modele.Reservation;
 
 public class controlleurPatio {
@@ -40,9 +41,9 @@ public class controlleurPatio {
     
     
     void initialize() {
-    	//TableColumn<Annulation,Integer> colonne1 = new TableColumn<Annulation,Integer>("Matricule");
-		//colonne1.setCellValueFactory(new PropertyValueFactory<Annulation,Integer>("matricule"));	
-		//listeResa.getColumns().set(0, colonne1);
+    	TableColumn<Annulation, String> colonne1 = new TableColumn<Annulation,String>("Nom");
+		colonne1.setCellValueFactory(new PropertyValueFactory<Annulation,String>("nom"));	
+		listeResa.getColumns().set(0, colonne1);
 		/*
 		TableColumn<Annulation, String> colonne2 = new TableColumn<Annulation,String>("Nom");
 		colonne2.setCellValueFactory(new PropertyValueFactory<Annulation, String>("nom"));
@@ -54,8 +55,8 @@ public class controlleurPatio {
 		colonne4.setCellValueFactory(new PropertyValueFactory<Annulation, Integer>("dept"));
 		listeResa.getColumns().set(3, colonne4);
 			*/	
-		//listeResa.setItems(.getLesEmployes());
-		//listeResa.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+		listeResa.setItems(Donnees.getLesAnnulations());
+		listeResa.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 		
 		//griser les boutons Modifier et Supprimer quand aucune s�lection
 		//BooleanBinding rien = Bindings.equal(tvListeEmployes.getSelectionModel().selectedIndexProperty(), -1);

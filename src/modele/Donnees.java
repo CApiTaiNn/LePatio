@@ -13,4 +13,9 @@ public class Donnees {
 		Reservation resa1 = new Reservation("1", currentdate, currentdate, client1);
 		lesAnnulation.add(new AnnulationClient(currentdate,false,resa1, "Client1"));
 	}
+	
+	
+	public static ObservableList<Annulation> getLesAnnulations() {
+		return lesAnnulation;
+	}
 }
