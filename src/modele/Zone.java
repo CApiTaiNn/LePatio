@@ -51,6 +51,18 @@ public class Zone {
     public Set<Fauteuil> getFauteuilsByRangee(String rangee) {
         return rangees.getOrDefault(rangee, new HashSet<>());
     }
+    
+    public static Zone creerZone(String nom, int nombreDeRangees) {
+        if (nom == null || nom.isEmpty() || nombreDeRangees <= 0) {           
+            return null;
+        }
+        Zone nouvelleZone = new Zone(nom, nombreDeRangees);
+        for (int i = 0; i < nombreDeRangees; i++) {
+            nouvelleZone.ajouterRangee();
+        }
+        return nouvelleZone;
+    }
+
 
     public void ajouterRangee() {
         char lettreRangee = (char) ('A' + prochainIndiceRangee);
