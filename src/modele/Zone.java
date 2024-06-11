@@ -93,7 +93,22 @@ public class Zone {
         }
     }
     
+    public void afficherRangeesEtFauteuils() {
+        for (Map.Entry<String, Set<Fauteuil>> entry : rangees.entrySet()) {
+            String rangee = entry.getKey();
+            Set<Fauteuil> fauteuils = entry.getValue();
+
+            System.out.println("Rangée : " + rangee);
+            for (Fauteuil fauteuil : fauteuils) {
+                System.out.println("\t" + fauteuil);
+            }
+        }
+    }
     
+    public void afficherZone() {
+        System.out.println("Zone : " + nom);
+        afficherRangeesEtFauteuils();
+    }
 
     @Override
     public String toString() {
