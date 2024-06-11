@@ -14,8 +14,10 @@
       </Label>
       <MenuButton fx:id="choixZone" mnemonicParsing="false" text="Choix de la zone">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem mnemonicParsing="false" text="Zone A" />
+          <MenuItem mnemonicParsing="false" text="Zone B" />
+            <MenuItem mnemonicParsing="false" text="Zone C" />
+            <MenuItem mnemonicParsing="false" text="Zone D" />
         </items>
          <VBox.margin>
             <Insets bottom="50.0" left="50.0" right="50.0" top="40.0" />
@@ -23,8 +25,14 @@
       </MenuButton>
       <MenuButton fx:id="choixRange" mnemonicParsing="false" text="Choix de la rangée">
         <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
+          <MenuItem mnemonicParsing="false" text="1 " />
+          <MenuItem mnemonicParsing="false" text="2" />
+            <MenuItem mnemonicParsing="false" text="3" />
+            <MenuItem mnemonicParsing="false" text="4" />
+            <MenuItem mnemonicParsing="false" text="5" />
+            <MenuItem mnemonicParsing="false" text="6" />
+            <MenuItem mnemonicParsing="false" text="7" />
+            <MenuItem mnemonicParsing="false" text="8" />
         </items>
          <VBox.margin>
             <Insets bottom="50.0" left="50.0" />
@@ -46,12 +54,12 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
          <children>
-            <Button fx:id="ok" mnemonicParsing="false" onMouseClicked="#clicOk" text="Ok">
+            <Button fx:id="Creer" mnemonicParsing="false" onAction="#clicCreer" text="Creer">
                <HBox.margin>
                   <Insets right="30.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="annuler" mnemonicParsing="false" onMouseClicked="#clicAnnuler" text="Annuler" />
+            <Button fx:id="annuler" mnemonicParsing="false" onAction="#fermer" text="Annuler" />
          </children>
          <opaqueInsets>
             <Insets right="30.0" />

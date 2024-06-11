@@ -16,7 +16,7 @@
    <center>
       <TableView fx:id="listeZone" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" />
+          <TableColumn fx:id="colonne1" prefWidth="75.0" />
         </columns>
          <BorderPane.margin>
             <Insets bottom="20.0" left="20.0" right="40.0" top="20.0" />
@@ -28,11 +28,11 @@
          <children>
             <VBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="100.0">
                <children>
-                  <Button fx:id="fauteuil" mnemonicParsing="false" onMouseClicked="#creerFaut" text="Créer fauteuil">
+                  <Button fx:id="fauteuil" mnemonicParsing="false" onAction="#creerFauteuil" text="Créer fauteuil">
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin></Button>
-                  <Button fx:id="supFauteuil" mnemonicParsing="false" onMouseClicked="#supprimerFaut" text="Supprimer Fauteuil">
+                  <Button fx:id="supFauteuil" mnemonicParsing="false" text="Supprimer Fauteuil">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
@@ -44,22 +44,22 @@
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="252.0" prefWidth="250.0">
                <children>
-                  <Button fx:id="créerZone" mnemonicParsing="false" onMouseClicked="#ajouterZone" text="Ajouter zone">
+                  <Button fx:id="créerZone" mnemonicParsing="false" onAction="#creerZone" text="Ajouter zone">
                      <VBox.margin>
                         <Insets top="40.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="modifZone" mnemonicParsing="false" onMouseClicked="#modifZone" text="Modifier zone">
+                  <Button fx:id="modifZone" mnemonicParsing="false" text="Modifier zone">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="supZone" mnemonicParsing="false" onMouseClicked="#supprimerZone" text="Supprimer zone">
+                  <Button fx:id="supZone" mnemonicParsing="false" text="Supprimer zone">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="fermer" mnemonicParsing="false" onMouseClicked="#fermer" text="Fermer" BorderPane.alignment="CENTER">
+                  <Button fx:id="fermer" mnemonicParsing="false" text="Fermer" BorderPane.alignment="CENTER">
                      <VBox.margin>
                         <Insets top="60.0" />
                      </VBox.margin>
