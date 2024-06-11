@@ -7,6 +7,7 @@ import vue.FenListeZone;
 import javafx.application.Application;
 //import javafx.stage.Modality;
 import javafx.stage.Stage;
+import modele.Fauteuil;
 
 
 public class MainSae extends Application {
@@ -29,14 +30,19 @@ public class MainSae extends Application {
 		//fModifier.initModality(Modality.APPLICATION_MODAL);
 		//fListe.initModality(Modality.APPLICATION_MODAL);
 		//fListe.show();
-		//fCreaZone.show();
-		fCreaZ.show();
+		fCreaZone.show();
+		//fCreaZ.show();
 	}
 	public static void main(String args[]) {
 		Application.launch();
 	}
 	static public void fermer() {
 		fListe.close();
+	}
+	
+	
+	static public void ouvrirListeFauteuil(Fauteuil f) {
+		fCreaZone.show();
 	}
 	
 }

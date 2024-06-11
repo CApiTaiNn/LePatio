@@ -2,33 +2,36 @@ package modele;
 
 import java.util.HashSet;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Fauteuil {
-	private String rangee;
-	private String numero;
+	private StringProperty rangee;
+	private StringProperty numero;
 	private Zone zone;
 	private HashSet<Billet> billets;
 	
 	public Fauteuil(String r, String n, Zone z) {
-		this.rangee = r;
-		this.numero = n;
+		this.rangee = new SimpleStringProperty(r);
+		this.numero = new SimpleStringProperty(n);
 		this.zone = z;
 		billets = new HashSet<>();
 	}
 
 	public String getRangee() {
-		return rangee;
+		return rangee.get();
 	}
 
 	public void setRangee(String rangee) {
-		this.rangee = rangee;
+		this.rangee.set(rangee);
 	}
 
 	public String getNumero() {
-		return numero;
+		return numero.get();
 	}
 
 	public void setNumero(String numero) {
-		this.numero = numero;
+		this.numero.set(numero);
 	}
 	
 	public Zone getZone() {
