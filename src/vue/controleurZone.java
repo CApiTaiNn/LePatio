@@ -64,4 +64,9 @@ public class controleurZone {
     void creerZone(ActionEvent event) {
     	MainSae.ouvrirCreaZone();
     }
+    
+    @FXML
+    void fermer(ActionEvent event) {
+    	MainSae.fermerListeZone();
+    }
 }

@@ -126,4 +126,9 @@ public class Zone {
     public String toString() {
         return "Nom : " + this.nom;
     }
+
+	public static Zone fromString(String selectedZone) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
