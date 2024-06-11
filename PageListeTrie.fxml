@@ -5,7 +5,12 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
+<<<<<<< HEAD
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.controlleurPatio">
+=======
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.controlleurPatio">
+>>>>>>> 8967a6f7ea7a8d73e86db778e1109777e35a6845
    <top>
       <MenuButton fx:id="choixTrie" alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Liste des réservation annuler en fonction des tries" BorderPane.alignment="CENTER">
         <items>
