@@ -1,10 +1,10 @@
 package vue;
 
 import controleur.MainSae;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
 
 public class controleurCreaZone {
 
@@ -18,24 +18,22 @@ public class controleurCreaZone {
     private TextField nomZone;
 
     @FXML
-    private Button ok;
+    private Button creer;
 
     @FXML
     private TextField nomRangee;
 
     @FXML
-    void clicOk(MouseEvent event) {
-    	
+    void creerZone(ActionEvent event) {
+    	System.out.println("Zone créer ");
+    	String nomSpec = nomSpectacle.getText();
+    	String nomZ = nomZone.getText();
+    	String nomRange = nomRangee.getText();
     }
 
     @FXML
-    void clicAnnuler(MouseEvent event) {
+    void fermer(ActionEvent event) {
     	MainSae.fermerCreaZone();
     }
-    /*
-    public void initialize() {
-		ok.disableProperty().bind(nomRangee.textProperty().isEmpty());
-	}
-	*/
 
 }
