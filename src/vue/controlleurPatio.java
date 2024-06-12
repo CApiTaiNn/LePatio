@@ -1,5 +1,7 @@
 package vue;
 
+import java.util.Date;
+
 import controleur.MainSae;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
@@ -12,6 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import modele.Annulation;
+import modele.AnnulationClient;
 import modele.Donnees;
 import modele.Reservation;
 
@@ -62,7 +65,7 @@ public class controlleurPatio {
     @FXML
     void initialize() {
     	TableColumn<AnnulationClient, String> colonne1 = new TableColumn<AnnulationClient,String>("Nom");
-		colonne1.setCellValueFactory(new PropertyValueFactory<Annulation,String>("nom"));	
+		colonne1.setCellValueFactory(new PropertyValueFactory<AnnulationClient,String>("nom"));	
 		listeResa.getColumns().set(0, colonne1);
 		
 		TableColumn<AnnulationClient, Boolean> colonne2 = new TableColumn<AnnulationClient,Boolean>("Nom");
