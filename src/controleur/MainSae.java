@@ -8,7 +8,9 @@ import vue.controleurZone;
 import javafx.application.Application;
 //import javafx.stage.Modality;
 import javafx.stage.Stage;
+import modele.AnnulationClient;
 import modele.Donnees;
+import modele.Employe;
 import modele.Fauteuil;
 
 
@@ -68,6 +70,17 @@ public class MainSae extends Application {
 		controleurZone controleurZone = new controleurZone();
 		controleurZone.afficherImprime(f);
 		fZone.show();
+	}
+	static public void supprimerAnnulation(AnnulationClient a) {
+		// enregistrer la suppression
+		Donnees.supprimerReservation(a);
+
+	}
+	
+	static public void supFauteuil(Fauteuil a) {
+		// enregistrer la suppression
+		Donnees.supprimerFauteuil(a);
+
 	}
 	
 }

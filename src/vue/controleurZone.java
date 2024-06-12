@@ -84,4 +84,18 @@ public class controleurZone {
     void fermer(ActionEvent event) {
     	MainSae.fermerListeZone();
     }
+    
+    @FXML
+    void modifZone(ActionEvent event) {
+    	//MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
+    }
+    @FXML
+    void supZone(ActionEvent event) {
+    	MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
+    }
+    @FXML
+    void ok(ActionEvent event) {
+    	//MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
+    }
+    
 }

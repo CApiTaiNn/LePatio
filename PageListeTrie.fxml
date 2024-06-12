@@ -5,12 +5,8 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<<<<<<< HEAD
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vue.controlleurPatio">
-=======
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.controlleurPatio">
->>>>>>> 8967a6f7ea7a8d73e86db778e1109777e35a6845
    <top>
       <MenuButton fx:id="choixTrie" alignment="BOTTOM_CENTER" mnemonicParsing="false" text="Liste des réservation annuler en fonction des tries" BorderPane.alignment="CENTER">
         <items>
@@ -28,17 +24,17 @@
             <Insets right="20.0" />
          </BorderPane.margin>
          <children>
-            <Button fx:id="ajouter" mnemonicParsing="false" text="Ajouter">
+            <Button fx:id="ajouter" mnemonicParsing="false" onAction="#ajouterListe" text="Ajouter">
                <VBox.margin>
                   <Insets bottom="20.0" left="70.0" right="40.0" top="30.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="modifier" mnemonicParsing="false" text="Modifier">
+            <Button fx:id="modifier" mnemonicParsing="false" onAction="#modifListe" text="Modifier">
                <VBox.margin>
                   <Insets left="70.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="Supprimer" mnemonicParsing="false" text="Supprimer">
+            <Button fx:id="Supprimer" mnemonicParsing="false" onAction="#supListe" text="Supprimer">
                <VBox.margin>
                   <Insets left="70.0" top="20.0" />
                </VBox.margin>

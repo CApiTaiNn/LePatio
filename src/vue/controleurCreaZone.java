@@ -35,5 +35,13 @@ public class controleurCreaZone {
     void fermer(ActionEvent event) {
     	MainSae.fermerCreaZone();
     }
+    @FXML
+    void ok(ActionEvent event) {
+    	//MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
+    }
+    @FXML
+    void annuler(ActionEvent event) {
+    	//MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
+    }
 
 }

@@ -60,12 +60,24 @@ public class Donnees {
 		boolean trouve = false;
 		int i=0;
 		while (!trouve && i<lesAnnulation.size()) {
-			if (lesAnnulation.get(i).getNom()==a.getNom()){
+			if (lesAnnulation.get(i).getNom().equals(a.getNom())){
 				lesAnnulation.remove(i);
 				trouve = true;
 			}
 			i++;
 		}
+	}
+	static public void supprimerFauteuil(Fauteuil e) {
+		boolean trouve = false;
+		int i=0;
+		while (!trouve && i<lesFauteuils.size()) {
+			if (lesFauteuils.get(i).getNumero().equals(e.getNumero())  && lesFauteuils.get(i).getRangee().equals(e.getRangee())  &&  lesFauteuils.get(i).getZone().getNom().equals(e.getZone().getNom())){
+				lesFauteuils.remove(i);
+				trouve = true;
+			}
+			i++;
+		}
+		System.out.println("c bon");
 	}
 	
 }
