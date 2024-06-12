@@ -33,6 +33,7 @@ public class Fauteuil {
 
     @Override
     public String toString() {
-        return "Rangee : " + this.rangee + " | Numero : " + this.numero + " | Zone : " + this.zone.getNom();
+        //return "Rangee : " + this.rangee + " | Numero : " + this.numero + " | Zone : " + this.zone.getNom();
+        return this.numero + " | Rangée : " + this.rangee + " | " + this.zone.getNom();
     }	
 }

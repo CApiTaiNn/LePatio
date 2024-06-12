@@ -23,8 +23,9 @@ import modele.Annulation;
 import modele.AnnulationClient;
 import modele.Donnees;
 import modele.Reservation;
+import javafx.beans.property.SimpleStringProperty;
 
-public class controlleurPatio {
+public class controleurListeAnnulation {
 
     @FXML
     private Button ajouter;
@@ -59,9 +60,10 @@ public class controlleurPatio {
     }
     @FXML
      void ajouterListe(ActionEvent e) {
-		// TODO Auto-generated method stub
+		
 
 	}
+    
     @FXML
      void modifListe(ActionEvent e) {
 		// TODO Auto-generated method stub
@@ -109,6 +111,22 @@ public class controlleurPatio {
 		TableColumn<AnnulationClient,Reservation> colonne4 = new TableColumn<AnnulationClient,Reservation>("Info réservation");
 		colonne4.setCellValueFactory(new PropertyValueFactory<AnnulationClient, Reservation>("resa"));
 		listeResa.getColumns().add(colonne4);
+		
+		TableColumn<AnnulationClient, String> colonneBillets = new TableColumn<>("Billets");
+	    colonneBillets.setCellValueFactory(cellData -> {
+	        Reservation resa = cellData.getValue().getResa();
+	        if (resa != null) {
+	            return new SimpleStringProperty(resa.getBillet());
+	        } else {
+	            return new SimpleStringProperty("");
+	        }
+	    });
+		/*
+		TableColumn<Reservation,String> colonne5 = new TableColumn<Reservation,String>("Info billets");
+		colonne5.setCellValueFactory(new PropertyValueFactory<Reservation, String>("billets"));
+		listeResa.getColumns().add(colonne4);
+		
+		*/
 			
 		listeResa.setItems(Donnees.getLesAnnulations());
 		listeResa.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);

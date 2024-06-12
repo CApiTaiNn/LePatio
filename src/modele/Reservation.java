@@ -52,13 +52,29 @@ public class Reservation {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-	//rajouter nb billet à retourner
+	
+	public String getBillet() {
+        StringBuilder billetStr = new StringBuilder();
+        for (Billet b : billets) {
+            billetStr.append(b.toString()).append(", ");
+        }
+        if (billetStr.length() > 2) {
+            billetStr.setLength(billetStr.length() - 2); // Supprime la dernière virgule et l'espace
+        }
+        return billetStr.toString();
+    }
+	
+	public int nbBillet() {
+		return billets.size();
+	}
+	
+	
 	//rajouter nb billet
 	//rajouter nom spectacle
 	
 	
 	public String toString() {
-		return "Numero : "+ this.numero + "\nDate : " + this.date + "\nDateConf : " + this.dateEnvoiConfDate + "\nClient : " + client.getNom();
+		return "Numero : "+ this.numero + "\nDate : " + this.date + "\nDateConf : " + this.dateEnvoiConfDate + "\nClient : " + client.getNom() + "\nBillets : " + this.getBillet() ;
 	}
 	
 	public void ajouteBillet(Billet b) {

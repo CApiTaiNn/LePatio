@@ -69,7 +69,6 @@ public class controleurCreaFaut {
     void clicCreer(ActionEvent event) {
     	String num = txtFaut.getText();
     	Zone zone = new Zone(selectedZone, 12);
-        System.out.println(zone.toString());
     	modele.Fauteuil f = new Fauteuil(num,selectedRange, zone);    	
     	MainSae.ouvrirListeFauteuil(f);
     }

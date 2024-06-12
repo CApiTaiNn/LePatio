@@ -1,5 +1,6 @@
 package modele;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public class Billet {
@@ -7,8 +8,8 @@ public class Billet {
 	private Fauteuil fauteuil;
 	private Reservation resa;
 	
-	public Billet(StringProperty num, Fauteuil f, Reservation r) {
-		this.numero = num;
+	public Billet(String num, Fauteuil f, Reservation r) {
+		this.numero = new SimpleStringProperty(num);
 		this.fauteuil = f;
 		this.resa = r;
 	}
@@ -39,7 +40,7 @@ public class Billet {
 	}
 
 	public String toString() {
-		return "Numero : " + this.numero + "|    Fauteuil : " + this.fauteuil;
+		return "Numero : " + this.numero.get() + " | Fauteuil : " + this.fauteuil;
 	}
 	
 }

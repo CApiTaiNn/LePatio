@@ -11,8 +11,7 @@ import javafx.collections.ObservableList;
 public class Donnees {
 	static private ObservableList<AnnulationClient>	lesAnnulation 	= FXCollections.observableArrayList();
 	static private ObservableList<Fauteuil>	lesFauteuils 	= FXCollections.observableArrayList();
-	
-	static private ObservableList<Test>	testlist 	= FXCollections.observableArrayList();
+
 	
 	
 	static public void chargementDonnees() { 
@@ -37,6 +36,10 @@ public class Donnees {
 		 */
 		Zone zone = new Zone("Zone B",5);
 		lesFauteuils.add(new Fauteuil("15", "A", zone));
+		
+		Fauteuil f = new Fauteuil("10", "C", zone);
+		Billet b1 = new Billet("1",f, resa2);
+		resa2.ajouteBillet(b1);
 	
 		
 	}

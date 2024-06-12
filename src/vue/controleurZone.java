@@ -84,7 +84,7 @@ public class controleurZone {
     
     @FXML
     void fermer(ActionEvent event) {
-    	MainSae.fermerListeZone();
+    	MainSae.fermerListeFauteuil();
     }
     
     @FXML

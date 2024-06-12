@@ -37,10 +37,10 @@ public class MainSae extends Application {
 		ctrlFaut = new controleurCreaFaut();
 		ctrlZone = new controleurZone();
 		//fListe.initModality(Modality.APPLICATION_MODAL);
-		//fListe.show();
+		fListe.show();
 		//fCreaFaut.show();
 		//fCreaZ.show();
-		fListeFauteuil.show();
+		//fListeFauteuil.show();
 	}
 	
 	public static void main(String args[]) {
@@ -51,7 +51,7 @@ public class MainSae extends Application {
 		System.exit(0);
 	}
 	
-	static public void fermerListeZone() {
+	static public void fermerListeFauteuil() {
 		System.exit(0);
 	}
 	
