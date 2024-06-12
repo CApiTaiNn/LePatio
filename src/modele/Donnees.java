@@ -13,7 +13,6 @@ public class Donnees {
 	static private ObservableList<Fauteuil>	lesFauteuils 	= FXCollections.observableArrayList();
 	
 	static private ObservableList<Test>	testlist 	= FXCollections.observableArrayList();
-	static private ObservableList<Zone>	lesZones 	= FXCollections.observableArrayList();
 	
 	
 	static public void chargementDonnees() { 
@@ -38,13 +37,7 @@ public class Donnees {
 		 */
 		Zone zone = new Zone("Zone B",5);
 		lesFauteuils.add(new Fauteuil("a", "15", zone));
-		
-		
-		//ajout des Zones
-		Zone z1 = new Zone("Zone A", 12);
-		lesZones.add(z1);
-		lesZones.add(zone);
-		
+	
 		
 	}
 	
@@ -92,7 +85,4 @@ public class Donnees {
 	}
 	
 	
-	static public ObservableList<Zone> getLesZones() {
-		return lesZones;
-	}
 }

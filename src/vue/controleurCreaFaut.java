@@ -47,24 +47,13 @@ public class controleurCreaFaut {
     @FXML
     public void initialize() {
     	Creer.disableProperty().bind(txtFaut.textProperty().isEmpty());
-    	if (choixZone != null) {
-            // Effacez les éléments existants, au cas où
-            choixZone.getItems().clear();
 
-            // Ajoutez les éléments de la liste des zones
-            List<Zone> zones = Donnees.getLesZones(); // Supposons que Donnees.getListeZones() retourne la liste des zones
-            for (Zone zone : zones) {
-                MenuItem item = new MenuItem(zone.getNom());
-                item.setOnAction(event -> {
-                    selectedZone = item.getText();
-                    choixZone.setText(selectedZone);
-                });
-                choixZone.getItems().add(item);
-            }
-        } else {
-            System.out.println("choixZone est null !");
+    	for (MenuItem item : choixZone.getItems()) {
+            item.setOnAction(event -> {
+                selectedRange = item.getText();
+                choixZone.setText(selectedRange); 
+            });
         }
-
         
         for (MenuItem item : choixRange.getItems()) {
             item.setOnAction(event -> {
@@ -100,7 +89,6 @@ public class controleurCreaFaut {
     	String str = z.getNom();
     	MenuItem nouvelleZone = new MenuItem(str);
     	choixZone.getItems().add(nouvelleZone);
-    	choixZone.setText(str);
     }
     
 }

@@ -89,6 +89,7 @@ public class MainSae extends Application {
 	}
 	
 	static public void ajoutZone(Zone z) {
+		fCreaZ.close();
 		ctrlFaut =  fCreaFaut.getControleur();
 		ctrlFaut.ajoutZone(z);
 	}
