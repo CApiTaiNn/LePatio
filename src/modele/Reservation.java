@@ -52,9 +52,13 @@ public class Reservation {
 	public void setClient(Client client) {
 		this.client = client;
 	}
-
+	//rajouter nb billet à retourner
+	//rajouter nb billet
+	//rajouter nom spectacle
+	
+	
 	public String toString() {
-		return "Numero : "+ this.numero + "|    Date : " + this.date + "|     DateConf : " + this.dateEnvoiConfDate + " |    Client : " + client.getNom();
+		return "Numero : "+ this.numero + "\nDate : " + this.date + "\nDateConf : " + this.dateEnvoiConfDate + "\nClient : " + client.getNom();
 	}
 	
 	public void ajouteBillet(Billet b) {
