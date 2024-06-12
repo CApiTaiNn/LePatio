@@ -8,6 +8,7 @@ import vue.controleurZone;
 import javafx.application.Application;
 //import javafx.stage.Modality;
 import javafx.stage.Stage;
+import modele.AnnulationClient;
 import modele.Donnees;
 import modele.Fauteuil;
 
@@ -68,6 +69,10 @@ public class MainSae extends Application {
 		controleurZone controleurZone = new controleurZone();
 		controleurZone.afficherImprime(f);
 		fZone.show();
+	}
+	public static void supprimerEmploye(AnnulationClient selectedItem) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

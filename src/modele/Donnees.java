@@ -49,4 +49,27 @@ public class Donnees {
 		return lesFauteuils;
 	}
 	
+	/*
+	 * 
+	 * Modification des données
+	 * 
+	 * 
+	 */
+	
+	static public void supprimerReservation(AnnulationClient a) {
+		boolean trouve = false;
+		int i=0;
+		while (!trouve && i<lesAnnulation.size()) {
+			if (lesAnnulation.get(i).getNom()==a.getNom()){
+				lesAnnulation.remove(i);
+				trouve = true;
+			}
+			i++;
+		}
+	}
+	
+	static public void ajoutFauteuil(Fauteuil f) {
+		lesFauteuils.add(f);
+	}
+	
 }

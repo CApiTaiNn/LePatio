@@ -12,16 +12,17 @@ public class controleurCreaZone {
     @FXML
     private Button annuler;
 
-
-    @FXML
-    private TextField nomZone;
-
     @FXML
     private Button creer;
 
     @FXML
-    private TextField nomRangee;
+    private TextField nomZone;
 
+
+    @FXML
+    private TextField nomRangee;
+    
+    
     @FXML
     void creerZone(ActionEvent event) {
     	System.out.println("Zone créer ");
@@ -30,6 +31,7 @@ public class controleurCreaZone {
     	Zone z = new Zone(nomZ,nomRange);
     	System.out.println(z.toString());
     }
+    
 
     @FXML
     void fermer(ActionEvent event) {
