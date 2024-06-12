@@ -5,7 +5,7 @@ public class Fauteuil {
     private String numero;
     private Zone zone;
 
-    public Fauteuil(String r, String n, Zone z) {
+    public Fauteuil(String n, String r, Zone z) {
         this.rangee = r;
         this.numero = n;
         this.zone = z;

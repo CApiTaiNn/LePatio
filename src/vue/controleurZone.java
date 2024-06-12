@@ -45,12 +45,14 @@ public class controleurZone {
     
     @FXML
     public void initialize() {
+    	
+    	
 
         colonne1 = new TableColumn<Fauteuil,String>("Numero");
         colonne1.setCellValueFactory(new PropertyValueFactory<>("numero"));
         listeZone.getColumns().set(0, colonne1);
 
-        TableColumn<Fauteuil, String> colonne2 = new TableColumn<Fauteuil,String>("Nom");
+        TableColumn<Fauteuil, String> colonne2 = new TableColumn<Fauteuil,String>("Rangée");
 		colonne2.setCellValueFactory(new PropertyValueFactory<Fauteuil, String>("rangee"));
 		listeZone.getColumns().add(colonne2);
 

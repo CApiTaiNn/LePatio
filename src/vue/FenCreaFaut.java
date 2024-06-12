@@ -8,7 +8,7 @@ import javafx.fxml.FXMLLoader;
 
 public class FenCreaFaut extends Stage {
 	
-	 private controleurCreaFaut ctrlFaut;
+	private controleurCreaFaut ctrlFaut;
 	
 	public FenCreaFaut() throws IOException {
 		this.setTitle("Creation d'un fauteuil");

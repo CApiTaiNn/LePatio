@@ -36,7 +36,7 @@ public class Donnees {
 		 * 
 		 */
 		Zone zone = new Zone("Zone B",5);
-		lesFauteuils.add(new Fauteuil("a", "15", zone));
+		lesFauteuils.add(new Fauteuil("15", "A", zone));
 	
 		
 	}

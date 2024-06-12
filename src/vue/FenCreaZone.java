@@ -8,6 +8,8 @@ import javafx.fxml.FXMLLoader;
 
 public class FenCreaZone extends Stage{
 	
+	
+	
 	public FenCreaZone() throws IOException {
 		this.setTitle("Création d'une Zone");
 		Scene laScene = new Scene(creerSceneGraph());
@@ -22,5 +24,6 @@ public class FenCreaZone extends Stage{
 		Pane racine = loader.load();
 		return racine;
 	}
+	
 	
 }

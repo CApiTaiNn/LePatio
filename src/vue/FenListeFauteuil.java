@@ -6,10 +6,12 @@ import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 import javafx.fxml.FXMLLoader;
 
-public class FenListeZone extends Stage{
+public class FenListeFauteuil extends Stage{
 	
-	public FenListeZone() throws IOException {
-		this.setTitle("Liste des zones");
+	private controleurZone ctrlZone;
+	
+	public FenListeFauteuil() throws IOException {
+		this.setTitle("Liste des Fauteuils !!!");
 		Scene laScene = new Scene(creerSceneGraph());
 		this.setMinHeight(600);
 		this.setMinWidth(30);
@@ -19,7 +21,12 @@ public class FenListeZone extends Stage{
 		FXMLLoader loader;
 		loader = new FXMLLoader(getClass().getResource("/pageZone.fxml"));
 		Pane racine = loader.load();
+		ctrlZone = loader.getController();
 		return racine;
 	}
+	
+	public controleurZone getControleur() {
+        return ctrlZone;
+    }
 	
 }

@@ -50,8 +50,8 @@ public class controleurCreaFaut {
 
     	for (MenuItem item : choixZone.getItems()) {
             item.setOnAction(event -> {
-                selectedRange = item.getText();
-                choixZone.setText(selectedRange); 
+                selectedZone = item.getText();
+                choixZone.setText(selectedZone); 
             });
         }
         
@@ -68,9 +68,9 @@ public class controleurCreaFaut {
     @FXML
     void clicCreer(ActionEvent event) {
     	String num = txtFaut.getText();
-        Zone zone = Zone.fromString(selectedZone); 
-    	modele.Fauteuil f = new Fauteuil(selectedRange, num, zone);
-    	
+    	Zone zone = new Zone(selectedZone, 12);
+        System.out.println(zone.toString());
+    	modele.Fauteuil f = new Fauteuil(num,selectedRange, zone);    	
     	MainSae.ouvrirListeFauteuil(f);
     }
 

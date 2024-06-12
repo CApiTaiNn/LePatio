@@ -3,7 +3,7 @@ package controleur;
 import vue.FenCreaFaut;
 import vue.FenCreaZone;
 import vue.FenListeTrie;
-import vue.FenListeZone;
+import vue.FenListeFauteuil;
 import vue.controleurCreaFaut;
 import vue.controleurZone;
 import javafx.application.Application;
@@ -17,11 +17,12 @@ import modele.Zone;
 
 public class MainSae extends Application {
 	static private FenListeTrie fListe;
-	static private FenListeZone fZone;
+	static private FenListeFauteuil fListeFauteuil;
 	static private FenCreaFaut fCreaFaut;
 	static private FenCreaZone fCreaZ;
 	
     static private controleurCreaFaut ctrlFaut;
+    static private controleurZone ctrlZone;
 
 
 
@@ -30,15 +31,16 @@ public class MainSae extends Application {
 		
 		
 		fListe = new FenListeTrie();
-		fZone = new FenListeZone();
+		fListeFauteuil = new FenListeFauteuil();
 		fCreaFaut = new FenCreaFaut();
 		fCreaZ = new FenCreaZone();
 		ctrlFaut = new controleurCreaFaut();
+		ctrlZone = new controleurZone();
 		//fListe.initModality(Modality.APPLICATION_MODAL);
 		//fListe.show();
 		//fCreaFaut.show();
 		//fCreaZ.show();
-		fZone.show();
+		fListeFauteuil.show();
 	}
 	
 	public static void main(String args[]) {
@@ -71,10 +73,11 @@ public class MainSae extends Application {
 	
 	
 	static public void ouvrirListeFauteuil(Fauteuil f) {
-		System.out.println("fauteuil creer");
-		controleurZone controleurZone = new controleurZone();
-		controleurZone.afficherImprime(f);
-		fZone.show();
+		ctrlZone = fListeFauteuil.getControleur();
+		ctrlZone.afficherImprime(f);
+		Donnees.ajoutFauteuil(f);
+		fCreaFaut.close();
+		fListeFauteuil.show();
 	}
 
 	static public void supprimerAnnulation(AnnulationClient a) {
