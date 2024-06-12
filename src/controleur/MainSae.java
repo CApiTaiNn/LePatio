@@ -8,6 +8,7 @@ import vue.controleurZone;
 import javafx.application.Application;
 //import javafx.stage.Modality;
 import javafx.stage.Stage;
+import modele.Donnees;
 import modele.Fauteuil;
 
 
@@ -20,7 +21,9 @@ public class MainSae extends Application {
 
 
 	public void start(Stage primaryStage) throws Exception {
-		//Donnees.chargementDonnees();
+		Donnees.chargementDonnees();
+		
+		
 		fListe = new FenListeTrie();
 		fZone = new FenListeZone();
 		fCreaFaut = new FenCreaZone();
