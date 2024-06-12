@@ -13,6 +13,7 @@ public class Donnees {
 	static private ObservableList<Fauteuil>	lesFauteuils 	= FXCollections.observableArrayList();
 	
 	static private ObservableList<Test>	testlist 	= FXCollections.observableArrayList();
+	static private ObservableList<Zone>	lesZones 	= FXCollections.observableArrayList();
 	
 	
 	static public void chargementDonnees() { 
@@ -35,8 +36,14 @@ public class Donnees {
 		 * Ajout des données dans liste des fauteuils
 		 * 
 		 */
-		Zone zone = new Zone("Orchestre",5);
+		Zone zone = new Zone("Zone B",5);
 		lesFauteuils.add(new Fauteuil("a", "15", zone));
+		
+		
+		//ajout des Zones
+		Zone z1 = new Zone("Zone A", 12);
+		lesZones.add(z1);
+		lesZones.add(zone);
 		
 		
 	}
@@ -60,16 +67,32 @@ public class Donnees {
 		boolean trouve = false;
 		int i=0;
 		while (!trouve && i<lesAnnulation.size()) {
-			if (lesAnnulation.get(i).getNom()==a.getNom()){
+			if (lesAnnulation.get(i).getNom().equals(a.getNom())){
 				lesAnnulation.remove(i);
 				trouve = true;
 			}
 			i++;
 		}
 	}
+	static public void supprimerFauteuil(Fauteuil e) {
+		boolean trouve = false;
+		int i=0;
+		while (!trouve && i<lesFauteuils.size()) {
+			if (lesFauteuils.get(i).getNumero().equals(e.getNumero())  && lesFauteuils.get(i).getRangee().equals(e.getRangee())  &&  lesFauteuils.get(i).getZone().getNom().equals(e.getZone().getNom())){
+				lesFauteuils.remove(i);
+				trouve = true;
+			}
+			i++;
+		}
+		System.out.println("c bon");
+	}
 	
 	static public void ajoutFauteuil(Fauteuil f) {
 		lesFauteuils.add(f);
 	}
 	
+	
+	static public ObservableList<Zone> getLesZones() {
+		return lesZones;
+	}
 }

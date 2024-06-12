@@ -32,7 +32,7 @@
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin></Button>
-                  <Button fx:id="supFauteuil" mnemonicParsing="false" text="Supprimer Fauteuil">
+                  <Button fx:id="supFauteuil" mnemonicParsing="false" onAction="#supFauteuil" text="Supprimer Fauteuil">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
@@ -49,17 +49,17 @@
                         <Insets top="40.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="modifZone" mnemonicParsing="false" text="Modifier zone">
+                  <Button fx:id="modifZone" mnemonicParsing="false" onAction="#modifZone" text="Modifier zone">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="supZone" mnemonicParsing="false" text="Supprimer zone">
+                  <Button fx:id="supZone" mnemonicParsing="false" onAction="#supZone" text="Supprimer zone">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="fermer" mnemonicParsing="false" text="Fermer" BorderPane.alignment="CENTER">
+                  <Button fx:id="fermer" mnemonicParsing="false" onAction="#fermer" text="Fermer" BorderPane.alignment="CENTER">
                      <VBox.margin>
                         <Insets top="60.0" />
                      </VBox.margin>

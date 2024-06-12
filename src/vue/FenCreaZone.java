@@ -9,16 +9,16 @@ import javafx.fxml.FXMLLoader;
 public class FenCreaZone extends Stage{
 	
 	public FenCreaZone() throws IOException {
-		this.setTitle("Création d'un fauteuil");
+		this.setTitle("Création d'une Zone");
 		Scene laScene = new Scene(creerSceneGraph());
-		this.setMinHeight(300);
+		this.setMinHeight(400);
 		this.setMinWidth(30);
-		this.setHeight(300);
+		this.setHeight(400);
 		this.setScene(laScene);
 	}
 	private Pane creerSceneGraph() throws IOException {
 		FXMLLoader loader;
-		loader = new FXMLLoader(getClass().getResource("/pageCreaFaut.fxml"));
+		loader = new FXMLLoader(getClass().getResource("/pageCreaZone.fxml"));
 		Pane racine = loader.load();
 		return racine;
 	}

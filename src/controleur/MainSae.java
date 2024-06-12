@@ -1,9 +1,10 @@
 package controleur;
 
-import vue.FenCreaZ;
+import vue.FenCreaFaut;
 import vue.FenCreaZone;
 import vue.FenListeTrie;
 import vue.FenListeZone;
+import vue.controleurCreaFaut;
 import vue.controleurZone;
 import javafx.application.Application;
 //import javafx.stage.Modality;
@@ -11,13 +12,16 @@ import javafx.stage.Stage;
 import modele.AnnulationClient;
 import modele.Donnees;
 import modele.Fauteuil;
+import modele.Zone;
 
 
 public class MainSae extends Application {
 	static private FenListeTrie fListe;
 	static private FenListeZone fZone;
-	static private FenCreaZone fCreaFaut;
-	static private FenCreaZ fCreaZ;
+	static private FenCreaFaut fCreaFaut;
+	static private FenCreaZone fCreaZ;
+	
+    static private controleurCreaFaut ctrlFaut;
 
 
 
@@ -27,14 +31,16 @@ public class MainSae extends Application {
 		
 		fListe = new FenListeTrie();
 		fZone = new FenListeZone();
-		fCreaFaut = new FenCreaZone();
-		fCreaZ = new FenCreaZ();
+		fCreaFaut = new FenCreaFaut();
+		fCreaZ = new FenCreaZone();
+		ctrlFaut = new controleurCreaFaut();
 		//fListe.initModality(Modality.APPLICATION_MODAL);
 		//fListe.show();
 		//fCreaFaut.show();
 		//fCreaZ.show();
 		fZone.show();
 	}
+	
 	public static void main(String args[]) {
 		Application.launch();
 	}
@@ -70,9 +76,21 @@ public class MainSae extends Application {
 		controleurZone.afficherImprime(f);
 		fZone.show();
 	}
-	public static void supprimerEmploye(AnnulationClient selectedItem) {
-		// TODO Auto-generated method stub
-		
+
+	static public void supprimerAnnulation(AnnulationClient a) {
+		// enregistrer la suppression
+		Donnees.supprimerReservation(a);
+
+	}
+	
+	static public void supFauteuil(Fauteuil a) {
+		// enregistrer la suppression
+		Donnees.supprimerFauteuil(a);
+	}
+	
+	static public void ajoutZone(Zone z) {
+		ctrlFaut =  fCreaFaut.getControleur();
+		ctrlFaut.ajoutZone(z);
 	}
 	
 }

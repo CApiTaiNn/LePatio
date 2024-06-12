@@ -6,22 +6,29 @@ import javafx.stage.Stage;
 import javafx.scene.layout.Pane;
 import javafx.fxml.FXMLLoader;
 
-public class FenCreaZ extends Stage {
+public class FenCreaFaut extends Stage {
 	
-	public FenCreaZ() throws IOException {
-		this.setTitle("Creation de zones");
+	 private controleurCreaFaut ctrlFaut;
+	
+	public FenCreaFaut() throws IOException {
+		this.setTitle("Creation d'un fauteuil");
 		Scene laScene = new Scene(creerSceneGraph());
-		this.setMinHeight(600);
+		this.setMinHeight(400);
 		this.setMinWidth(30);
 		this.setScene(laScene);
 	}
 
 	private Pane creerSceneGraph() throws IOException {
      	FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/pageCreaZone.fxml"));
+        loader.setLocation(getClass().getResource("/pageCreaFaut.fxml"));
         Pane root = loader.load();
-        loader.getController();
+        ctrlFaut = loader.getController();
      	return root;
 	}
+	
+	
+	public controleurCreaFaut getControleur() {
+        return ctrlFaut;
+    }
 }
 

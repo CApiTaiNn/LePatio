@@ -7,6 +7,7 @@ import java.util.Optional;
 import controleur.MainSae;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -56,9 +57,20 @@ public class controlleurPatio {
     void modifier(MouseEvent event) {
 
     }
+    @FXML
+     void ajouterListe(ActionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
+    @FXML
+     void modifListe(ActionEvent e) {
+		// TODO Auto-generated method stub
+
+	}
 
     @FXML
-    void supprimer(MouseEvent event) {
+    void supListe(ActionEvent event) {
+    	// fxml qui detecte peut être pas le clic
     	Alert alert = new Alert(
    			 AlertType.CONFIRMATION,
    			 "Voulez-vous vraiment supprimer cet employé ?",
@@ -70,8 +82,9 @@ public class controlleurPatio {
    	 Optional<ButtonType> reponse;
    	 reponse = alert.showAndWait();
    	 if (reponse.get() == ButtonType.YES) {
-			MainSae.supprimerEmploye(listeResa.getSelectionModel().getSelectedItem());
+			MainSae.supprimerAnnulation(listeResa.getSelectionModel().getSelectedItem());
 		}
+    System.out.println("ça marche");
     }
 
     @FXML
