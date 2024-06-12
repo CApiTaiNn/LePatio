@@ -11,6 +11,7 @@ import javafx.scene.control.TableView;
 import modele.AnnulationClient;
 import modele.Donnees;
 import modele.Fauteuil;
+import modele.Zone;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class controleurZone {
@@ -54,11 +55,11 @@ public class controleurZone {
 		listeZone.getColumns().add(colonne2);
 
         TableColumn<Fauteuil, Zone> colonne3 = new TableColumn<Fauteuil,Zone>("Zone");
-		colonne2.setCellValueFactory(new PropertyValueFactory<Fauteuil, Zone>("zone"));
+		colonne3.setCellValueFactory(new PropertyValueFactory<Fauteuil, Zone>("zone"));
 		listeZone.getColumns().add(colonne3);
 
         //listeZone.setItems(data);
-       // listeZone.setItems(Donnees.getLesFauteuils());
+       listeZone.setItems(Donnees.getFauteuil());
     }
     
 

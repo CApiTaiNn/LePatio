@@ -112,7 +112,7 @@ public class Zone {
 
     @Override
     public String toString() {
-        return "Nom : " + this.nom ;
+        return "Nom : " + this.nom  ;
     }
 
 	public static Zone fromString(String selectedZone) {
