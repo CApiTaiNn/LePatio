@@ -83,6 +83,10 @@ public class MainSae extends Application {
 		fCreaFaut.close();
 		fListeFauteuil.show();
 	}
+	
+	static public void ouvrirListeFauteuil() {
+		fListeFauteuil.show();
+	}
 
 	static public void supprimerAnnulation(AnnulationClient a) {
 		// enregistrer la suppression

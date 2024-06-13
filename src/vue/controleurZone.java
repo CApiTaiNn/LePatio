@@ -93,11 +93,11 @@ public class controleurZone {
     }
     @FXML
     void supZone(ActionEvent event) {
-    	MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
+    	
     }
     @FXML
-    void ok(ActionEvent event) {
-    	//MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
+    void supFauteuil(ActionEvent event) {
+    	MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
     }
     
 }

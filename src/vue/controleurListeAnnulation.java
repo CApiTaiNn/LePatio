@@ -49,6 +49,15 @@ public class controleurListeAnnulation {
 
     @FXML
     private Button Supprimer;
+    
+    @FXML
+    private Button listeFauteuil;
+
+    
+    @FXML
+    void listeFauteuil(ActionEvent event) {
+    	MainSae.ouvrirListeFauteuil();
+    }
 
     @FXML
     void fermer(MouseEvent event) {
