@@ -6,12 +6,14 @@ import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+
+import controleur.MainSae;
 import javafx.collections.ObservableList;
 
 public class Donnees {
 	static private ObservableList<AnnulationClient>	lesAnnulation 	= FXCollections.observableArrayList();
 	static private ObservableList<Fauteuil>	lesFauteuils 	= FXCollections.observableArrayList();
-
+	static private ObservableList<AnnulationClient>	listeFiltrer 	= FXCollections.observableArrayList();
 	
 	
 	static public void chargementDonnees() { 
@@ -20,14 +22,22 @@ public class Donnees {
 		 * Ajout des données dans liste des annulations
 		 * 
 		 * */
+		Theatre theatre = new Theatre("Theatre");
+		Spectacle s1 = new Spectacle("bambi", 120, 200, theatre);
+		Representation repre = new Representation("12", "21h", true, s1);
+		
 		Date currentdate = new Date();
 		Abonne client1 = new Abonne("Fauchet", "Benjamin", "Susu", "0712121212", "fauchet@gmail.com", "1");
 		Reservation resa1 = new Reservation("1", currentdate, currentdate, client1);
+		
+		resa1.setRepresentation(repre);
 		lesAnnulation.add(new AnnulationClient(currentdate,false,resa1, "Client1"));
 		
 		Date currentdate1 = new Date();
 		Abonne client2 = new Abonne("Fauchet", "Malo", "Lannion", "0712121212", "LaFauche@gmail.com", "2");
 		Reservation resa2 = new Reservation("2", currentdate1, currentdate1, client2);
+		
+		resa2.setRepresentation(repre);
 		lesAnnulation.add(new AnnulationClient(currentdate1,false,resa2, "Client2"));
 		/*
 		 * 
@@ -86,6 +96,16 @@ public class Donnees {
 	static public void ajoutFauteuil(Fauteuil f) {
 		lesFauteuils.add(f);
 	}
+	
+	
+	public static ObservableList<AnnulationClient> listeFiltrer(String clientNum) {
+        for (AnnulationClient a : lesAnnulation) {
+			if(a.getResa().getClient().getNumero().equals(clientNum)){
+				listeFiltrer.add(a);
+			}
+		}
+        return listeFiltrer;
+    }
 	
 	
 }

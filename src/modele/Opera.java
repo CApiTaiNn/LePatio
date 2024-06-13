@@ -1,9 +1,9 @@
 package modele;
 
-import javafx.beans.property.StringProperty;
+
 
 public class Opera extends Genre{
-	public Opera(StringProperty lib) {
+	public Opera(String lib) {
 		super(lib);
 	}
 }

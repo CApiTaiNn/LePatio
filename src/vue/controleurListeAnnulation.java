@@ -16,6 +16,7 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -24,6 +25,7 @@ import modele.AnnulationClient;
 import modele.Donnees;
 import modele.Reservation;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.ObservableList;
 
 public class controleurListeAnnulation {
 
@@ -38,9 +40,12 @@ public class controleurListeAnnulation {
 
     @FXML
     private Button modifier;
+    
+    @FXML
+    private Button filtrer;
 
     @FXML
-    private MenuButton choixTrie;
+    private TextField numcliFiltre;
 
     @FXML
     private Button Supprimer;
@@ -69,6 +74,8 @@ public class controleurListeAnnulation {
 		// TODO Auto-generated method stub
 
 	}
+    
+
 
     @FXML
     void supListe(ActionEvent event) {
@@ -111,7 +118,7 @@ public class controleurListeAnnulation {
 	    
 	    
 	  //le nom du spectacle, la date et l’heure de début de la représentation concernée
-    	TableColumn<AnnulationClient, String> colonneRepre = new TableColumn<>("Client");
+    	TableColumn<AnnulationClient, String> colonneRepre = new TableColumn<>("Représentation");
 	    colonneRepre.setCellValueFactory(cellData -> {
 	        Reservation resa = cellData.getValue().getResa();
 	        if (resa != null) {
@@ -122,22 +129,10 @@ public class controleurListeAnnulation {
 	    });
 	    listeResa.getColumns().add(colonneRepre);
 	    
-	    /*
-    	TableColumn<AnnulationClient, String> colonne1 = new TableColumn<AnnulationClient,String>("Client");
-		colonne1.setCellValueFactory(new PropertyValueFactory<AnnulationClient,String>("nom"));	
-		listeResa.getColumns().add(colonne1);
-		*/
-		TableColumn<AnnulationClient, Boolean> colonne2 = new TableColumn<AnnulationClient,Boolean>("Remboursement");
-		colonne2.setCellValueFactory(new PropertyValueFactory<AnnulationClient, Boolean>("remboursementEffectue"));
-		listeResa.getColumns().add(colonne2);
-		
-		TableColumn<AnnulationClient, Date> colonne3 = new TableColumn<AnnulationClient,Date>("Date d'annulation");
+	    //la date de demande d’annulation
+	    TableColumn<AnnulationClient, Date> colonne3 = new TableColumn<AnnulationClient,Date>("Date d'annulation");
 		colonne3.setCellValueFactory(new PropertyValueFactory<AnnulationClient, Date>("date"));
 		listeResa.getColumns().add(colonne3);
-		
-		TableColumn<AnnulationClient,Reservation> colonne4 = new TableColumn<AnnulationClient,Reservation>("Info réservation");
-		colonne4.setCellValueFactory(new PropertyValueFactory<AnnulationClient, Reservation>("resa"));
-		listeResa.getColumns().add(colonne4);
 		
 		TableColumn<AnnulationClient, String> colonneBillets = new TableColumn<>("Billets");
 	    colonneBillets.setCellValueFactory(cellData -> {
@@ -157,7 +152,18 @@ public class controleurListeAnnulation {
 		//BooleanBinding rien = Bindings.equal(tvListeEmployes.getSelectionModel().selectedIndexProperty(), -1);
 		//bnSupprimer.disableProperty().bind(rien);
 		//bnModifier.disableProperty().bind(rien);
+		
+		filtrer.disableProperty().bind(numcliFiltre.textProperty().isEmpty());
 
     }
+    
+    
+    @FXML
+    void filtrerClient(ActionEvent event) {
+    	//String num_cli = numcliFiltre.getText();
+    	listeResa.setItems(Donnees.listeFiltrer(numcliFiltre.getText()));
+    	//MainSae.triAnnulation(num_cli);
+    }
+  
 
 }

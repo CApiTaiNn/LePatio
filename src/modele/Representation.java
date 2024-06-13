@@ -32,6 +32,10 @@ public class Representation {
 	public void setHeure(String heure) {
 		this.heure = heure;
 	}
+	
+	public void setSpec(Spectacle s) {
+		this.spectacle = s;
+	}
 
 	public Boolean getAnnulee() {
 		return annulee;

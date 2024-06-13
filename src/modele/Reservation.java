@@ -78,8 +78,19 @@ public class Reservation {
         if (billetStr.length() > 2) {
             billetStr.setLength(billetStr.length() - 2); // Supprime la dernière virgule et l'espace
         }
+        String str = "\nNombre de billet : " + nbBillet();
+        billetStr.append(str);
         return billetStr.toString();
     }
+	
+	
+	public String lesBillet() {
+		String str = "";
+		for (Billet b : billets) {
+			str.concat(b.toString());
+		}
+		return str;
+	}
 	
 	public int nbBillet() {
 		return billets.size();

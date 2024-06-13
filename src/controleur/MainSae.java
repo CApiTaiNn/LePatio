@@ -5,8 +5,10 @@ import vue.FenCreaZone;
 import vue.FenListeTrie;
 import vue.FenListeFauteuil;
 import vue.controleurCreaFaut;
+import vue.controleurListeAnnulation;
 import vue.controleurZone;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 //import javafx.stage.Modality;
 import javafx.stage.Stage;
 import modele.AnnulationClient;
@@ -23,6 +25,7 @@ public class MainSae extends Application {
 	
     static private controleurCreaFaut ctrlFaut;
     static private controleurZone ctrlZone;
+    static private controleurListeAnnulation ctrlListe;
 
 
 
@@ -36,6 +39,7 @@ public class MainSae extends Application {
 		fCreaZ = new FenCreaZone();
 		ctrlFaut = new controleurCreaFaut();
 		ctrlZone = new controleurZone();
+		ctrlListe = new controleurListeAnnulation();
 		//fListe.initModality(Modality.APPLICATION_MODAL);
 		fListe.show();
 		//fCreaFaut.show();
@@ -95,6 +99,10 @@ public class MainSae extends Application {
 		fCreaZ.close();
 		ctrlFaut =  fCreaFaut.getControleur();
 		ctrlFaut.ajoutZone(z);
+	}
+	
+	static public void triAnnulation(String n) {
+		Donnees.listeFiltrer(n);
 	}
 	
 }
