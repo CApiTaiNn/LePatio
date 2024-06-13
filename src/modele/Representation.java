@@ -42,6 +42,9 @@ public class Representation {
 	}
 
 
+	public String getSpecInfo() {
+        return spectacle.getNom() + "\nDate : " + this.jour + "\nHeure : " + this.heure;
+    }
 
 
 	public void ajouterResa(Reservation r){

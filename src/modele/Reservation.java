@@ -36,6 +36,15 @@ public class Reservation {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	
+
+	public Representation getRepresentation() {
+		return representation;
+	}
+
+	public void setRepresentation(Representation representation) {
+		this.representation = representation;
+	}
 
 	public Date getDateEnvoiConfDate() {
 		return dateEnvoiConfDate;
@@ -45,9 +54,17 @@ public class Reservation {
 		this.dateEnvoiConfDate = dateEnvoiConfDate;
 	}
 	
+	public String getRepresInfo() {
+        return representation.getSpecInfo();
+    }
+	
 	public Client getClient() {
 		return client;
 	}
+	
+	public String getClientInfo() {
+        return client.getNom() + "\n" + client.getNumero();
+    }
 
 	public void setClient(Client client) {
 		this.client = client;
@@ -74,7 +91,7 @@ public class Reservation {
 	
 	
 	public String toString() {
-		return "Numero : "+ this.numero + "\nDate : " + this.date + "\nDateConf : " + this.dateEnvoiConfDate + "\nClient : " + client.getNom() + "\nBillets : " + this.getBillet() ;
+		return "Numero : "+ this.numero + "\nDate : " + this.date + "\nDateConf : " + this.dateEnvoiConfDate + "\nClient : " + client.getNom();
 	}
 	
 	public void ajouteBillet(Billet b) {

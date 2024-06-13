@@ -96,10 +96,37 @@ public class controleurListeAnnulation {
     
     @FXML
     void initialize() {
-    	TableColumn<AnnulationClient, String> colonne1 = new TableColumn<AnnulationClient,String>("Nom");
+    	
+    	//Nom et numero du client
+    	TableColumn<AnnulationClient, String> colonneClient = new TableColumn<>("Client");
+	    colonneClient.setCellValueFactory(cellData -> {
+	        Reservation resa = cellData.getValue().getResa();
+	        if (resa != null) {
+	            return new SimpleStringProperty(resa.getClientInfo());
+	        } else {
+	            return new SimpleStringProperty("");
+	        }
+	    });
+	    listeResa.getColumns().add(colonneClient);
+	    
+	    
+	  //le nom du spectacle, la date et l’heure de début de la représentation concernée
+    	TableColumn<AnnulationClient, String> colonneRepre = new TableColumn<>("Client");
+	    colonneRepre.setCellValueFactory(cellData -> {
+	        Reservation resa = cellData.getValue().getResa();
+	        if (resa != null) {
+	            return new SimpleStringProperty(resa.getRepresInfo());
+	        } else {
+	            return new SimpleStringProperty("");
+	        }
+	    });
+	    listeResa.getColumns().add(colonneRepre);
+	    
+	    /*
+    	TableColumn<AnnulationClient, String> colonne1 = new TableColumn<AnnulationClient,String>("Client");
 		colonne1.setCellValueFactory(new PropertyValueFactory<AnnulationClient,String>("nom"));	
 		listeResa.getColumns().add(colonne1);
-		
+		*/
 		TableColumn<AnnulationClient, Boolean> colonne2 = new TableColumn<AnnulationClient,Boolean>("Remboursement");
 		colonne2.setCellValueFactory(new PropertyValueFactory<AnnulationClient, Boolean>("remboursementEffectue"));
 		listeResa.getColumns().add(colonne2);
@@ -121,12 +148,7 @@ public class controleurListeAnnulation {
 	            return new SimpleStringProperty("");
 	        }
 	    });
-		/*
-		TableColumn<Reservation,String> colonne5 = new TableColumn<Reservation,String>("Info billets");
-		colonne5.setCellValueFactory(new PropertyValueFactory<Reservation, String>("billets"));
-		listeResa.getColumns().add(colonne4);
-		
-		*/
+	    listeResa.getColumns().add(colonneBillets);
 			
 		listeResa.setItems(Donnees.getLesAnnulations());
 		listeResa.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);

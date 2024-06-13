@@ -2,19 +2,20 @@ package modele;
 
 import java.util.ArrayList;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
 public abstract class Genre {
 	private StringProperty libelle;
 	private ArrayList<Spectacle> spectacles;
 	
-	public Genre(StringProperty l) {
-		this.libelle = l;
+	public Genre(String l) {
+		this.libelle = new SimpleStringProperty(l);
 		spectacles = new ArrayList<>();
 	}
 
-	public StringProperty getLibelle() {
-		return libelle;
+	public String getLibelle() {
+		return libelle.get();
 	}
 
 	public void setLibelle(StringProperty libelle) {

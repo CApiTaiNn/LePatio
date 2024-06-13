@@ -1,9 +1,8 @@
 package modele;
 
-import javafx.beans.property.StringProperty;
 
 public class Theatre extends Genre{
-	public Theatre(StringProperty lib) {
+	public Theatre(String lib) {
 		super(lib);
 	}
 }
