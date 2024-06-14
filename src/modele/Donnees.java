@@ -79,6 +79,7 @@ public class Donnees {
 			}
 			i++;
 		}
+		System.out.println("c bon");
 	}
 	static public void supprimerFauteuil(Fauteuil e) {
 		boolean trouve = false;

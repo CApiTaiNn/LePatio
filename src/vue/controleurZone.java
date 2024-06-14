@@ -26,12 +26,6 @@ public class controleurZone {
     private TableView<Fauteuil> listeZone;
 
     @FXML
-    private Button modifZone;
-
-    @FXML
-    private Button supZone;
-
-    @FXML
     private Button fermer;
 
     @FXML
@@ -87,17 +81,16 @@ public class controleurZone {
     	MainSae.fermerListeFauteuil();
     }
     
-    @FXML
-    void modifZone(ActionEvent event) {
-    	//MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
-    }
-    @FXML
-    void supZone(ActionEvent event) {
-    	
-    }
+    
     @FXML
     void supFauteuil(ActionEvent event) {
-    	MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
+    	if(listeZone.getSelectionModel().getSelectedItem() != null) {
+    		MainSae.supFauteuil(listeZone.getSelectionModel().getSelectedItem());
+    	}else {
+    		System.out.println("Impossible car aucun element n'est selectionner");
+    	}
     }
+    
+    
     
 }

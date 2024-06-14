@@ -1,22 +1,16 @@
 package vue;
 
-import java.util.List;
+
 
 import controleur.MainSae;
 import javafx.event.ActionEvent;
-
-
-import controleur.MainSae;
-import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
-import modele.Donnees;
 import modele.Fauteuil;
 import modele.Zone;
-import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 
@@ -38,6 +32,18 @@ public class controleurCreaFaut {
     @FXML
     private MenuButton choixRange;
     
+    @FXML
+    private MenuItem ZoneA;
+
+    @FXML
+    private MenuItem ZoneB;
+
+    @FXML
+    private MenuItem ZoneC;
+
+    @FXML
+    private MenuItem ZoneD;
+    
 
     private Zone selectedZone;
     private String selectedRange;
@@ -47,11 +53,18 @@ public class controleurCreaFaut {
     @FXML
     public void initialize() {
     	Creer.disableProperty().bind(txtFaut.textProperty().isEmpty());
-
+    	
     	for (MenuItem item : choixZone.getItems()) {
             item.setOnAction(event -> {
-                selectedZone = (Zone) item.getUserData();
-                choixZone.setText(selectedZone.getNom());
+                if (item.getUserData() instanceof Zone) {
+                    selectedZone = (Zone) item.getUserData();
+                    choixZone.setText(selectedZone.getNom());
+                } else {
+                    String zoneName = item.getText();
+                    // Create a default Zone object based on the zone name
+                    selectedZone = new Zone(zoneName, 12); // assuming default 12 rows
+                    choixZone.setText(zoneName);
+                }
             });
         }
         
@@ -60,9 +73,7 @@ public class controleurCreaFaut {
                 selectedRange = item.getText();
                 choixRange.setText(selectedRange); 
             });
-        }
-        
-        
+        }     
     }
     
     @FXML
@@ -87,14 +98,32 @@ public class controleurCreaFaut {
     
     
     public void ajoutZone(Zone z) {
-        MenuItem nouvelleZone = new MenuItem(z.getNom());
-        nouvelleZone.setUserData(z); // Store the Zone object in the MenuItem
-        nouvelleZone.setOnAction(event -> {
-            selectedZone = (Zone) nouvelleZone.getUserData();
-            choixZone.setText(selectedZone.getNom());
-        });
-        choixZone.getItems().add(nouvelleZone);
+        String zoneName = z.getNom();
+        if (!zoneExists(zoneName)) {
+            MenuItem nouvelleZone = new MenuItem(zoneName);
+            nouvelleZone.setUserData(z);
+            nouvelleZone.setOnAction(event -> {
+                selectedZone = (Zone) nouvelleZone.getUserData();
+                choixZone.setText(selectedZone.getNom());
+            });
+            choixZone.getItems().add(nouvelleZone);
+        } else {
+            System.out.println("La zone existe déjà !");
+        }
     }
     
+    
+    public boolean zoneExists(String zoneName) {
+        for (MenuItem item : choixZone.getItems()) {
+            if (item.getText().equals(zoneName)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public MenuButton getChoixZone() {
+        return choixZone;
+    }
 }
 

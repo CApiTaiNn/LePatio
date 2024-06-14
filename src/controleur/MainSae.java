@@ -9,6 +9,8 @@ import vue.controleurListeAnnulation;
 import vue.controleurZone;
 import javafx.application.Application;
 import javafx.collections.ObservableList;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 //import javafx.stage.Modality;
 import javafx.stage.Stage;
 import modele.AnnulationClient;
@@ -56,7 +58,7 @@ public class MainSae extends Application {
 	}
 	
 	static public void fermerListeFauteuil() {
-		System.exit(0);
+		fListeFauteuil.close();
 	}
 	
 	static public void fermerCreaFaut() {
@@ -99,6 +101,8 @@ public class MainSae extends Application {
 		Donnees.supprimerFauteuil(a);
 	}
 	
+
+	
 	static public void ajoutZone(Zone z) {
 		fCreaZ.close();
 		ctrlFaut =  fCreaFaut.getControleur();
@@ -109,4 +113,23 @@ public class MainSae extends Application {
 		Donnees.listeFiltrer(n);
 	}
 	
+	public static boolean zoneExists(String zoneName) {
+        if (ctrlFaut != null) {
+            MenuButton choixZone = ctrlFaut.getChoixZone();
+            if (choixZone != null && choixZone.getItems() != null) {
+                for (MenuItem item : choixZone.getItems()) {
+                    if (item.getText().equals(zoneName)) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+	
+	public static controleurCreaFaut getControleurCreaFaut() {
+		return ctrlFaut;
+	}
 }
+
+	

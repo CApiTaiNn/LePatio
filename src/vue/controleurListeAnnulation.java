@@ -29,8 +29,6 @@ import javafx.collections.ObservableList;
 
 public class controleurListeAnnulation {
 
-    @FXML
-    private Button ajouter;
 
     @FXML
     private Button fermer;
@@ -91,18 +89,16 @@ public class controleurListeAnnulation {
     	// fxml qui detecte peut être pas le clic
     	Alert alert = new Alert(
    			 AlertType.CONFIRMATION,
-   			 "Voulez-vous vraiment supprimer cet employé ?",
+   			 "Voulez-vous vraiment supprimer cette annulation ?",
    			 ButtonType.YES,
    			 ButtonType.NO
    	);
    	 alert.setTitle("Confirmation du message");
-   	 alert.showAndWait();
    	 Optional<ButtonType> reponse;
    	 reponse = alert.showAndWait();
    	 if (reponse.get() == ButtonType.YES) {
 			MainSae.supprimerAnnulation(listeResa.getSelectionModel().getSelectedItem());
-		}
-    System.out.println("ça marche");
+		}System.out.println("Annulation");
     }
 
     @FXML
